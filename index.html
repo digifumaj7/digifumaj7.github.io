@@ -1,15 +1,85 @@
 <link rel="stylesheet" href="digifu.css">
+<link rel="stylesheet" href="modal.css">
+
 <head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
   <title>Δ7</title>
+  <script>
+    window.onload = function(){
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+      }
+      var base = "./assets/images/7jam_"
+      var flavors = ["bean","blue","melon"]
+      
+      var flavor = flavors[getRandomInt(3)]
+      var img_path = base+flavor+".gif"
+
+      document.getElementById("can1").src = img_path;
+      document.getElementById("can2").src = img_path;
+    }
+  </script>
 </head>
-<body class="wrapper">
-  
+<body>
+  <div class ="wrapper"></div>
   
   <div class = "center">
+    <img id="can1">
+
     <div id ="test">
       <h1><a href="https://discord.gg/sCVtXqPBJR">Δ7</a></h1>
+      <p id="credit"><a id="credits_text">Credits</a></p>
     </div>
+
+    <img id="can2">
   </div>
+
+  <!-- Credits Modal -->
+  <div id="creditsModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>The <a href="https://discord.gg/sCVtXqPBJR">Maj7 Discord</a> is run by <a href="https://blitzlunar.neocities.org/">Blitz Lunar</a></h2>
+      <h2>Web Design</h2>
+      <p><a href="https://twitter.com/deelatchs">Deelatch</a></p>
+      <p><a href="https://twitter.com/itsToxin_X">Toxin_X</a></p>
+      <h2>7Jam Energy Drink</h2>
+      <p>Design: <a href="https://twitter.com/blasphysics">blasphysics</a></p>
+      <p>3D Model: <a href="https://twitter.com/uewipiw">Tony Thai</a></p>
+      <p>Tagline: <a href="https://twitter.com/redoxwarfare">redoxwarfare</a></p>
+    </div>
+
+  </div>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById("creditsModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("credits_text");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 
 
 
