@@ -64,6 +64,10 @@
     cursor: pointer;
   }
 
+  #freepik{
+    font-size: small;
+  }
+
  
   
   @keyframes colorRotate {
